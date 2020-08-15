@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhoneNumberLoginActivity">
+
+    <ImageView
+        android:id="@+id/verify_image"
+        android:src="@drawable/verify2"
+        android:layout_marginTop="40dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/verify_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="17dp"
+        android:background="@drawable/inputs"
+        android:drawableStart="@drawable/phone"
+        android:hint="Write your phone number..."
+        android:padding="10dp"
+        android:text="@string/write_your_phone_number"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/OTP_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone_number"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="17dp"
+        android:background="@drawable/inputs"
+        android:drawableStart="@drawable/password"
+        android:hint="Verification code..."
+        android:padding="10dp"
+        android:text="@string/verification_code..."
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/generate_code"
+        android:text="Send Verification Code"
+        android:textAllCaps="false"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/OTP_code"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/background_light"
+        android:textSize="17sp"
+        android:textAlignment="center"
+        android:textStyle="bold"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/verify_number"
+        android:text="Verify Number"
+        android:textAllCaps="false"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/generate_code"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/background_light"
+        android:textSize="17sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:visibility="invisible"/>
+
+</RelativeLayout>
