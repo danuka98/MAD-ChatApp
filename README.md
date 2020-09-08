@@ -1,1 +1,2 @@
 # MAD-ChatApp
+Our project is an example of a chat application. It is made up of communicating among peoples. First, start chatting users should get connected to the application server. That means users need to create an account for the chat. They can register with their email address or phone number. Then users can chat with their friends. So, inside of the app users can call or message (Group message or private message).
