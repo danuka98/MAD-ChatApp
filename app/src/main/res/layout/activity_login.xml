@@ -36,7 +36,7 @@
                 android:drawableStart="@drawable/email"
                 android:inputType="textEmailAddress"
                 android:padding="4dp"
-                android:text="@string/login_email" />
+                android:hint="Email.."/>
 
             <EditText
                 android:id="@+id/login_password"
@@ -51,7 +51,7 @@
                 android:drawableStart="@drawable/password"
                 android:inputType="textPassword"
                 android:padding="4dp"
-                android:text="@string/login_password" />
+                android:hint="Password.."/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                 android:layout_marginRight="19dp"
                 android:background="@drawable/buttons"
                 android:padding="4dp"
-                android:text="@string/login"
+                android:text="Login"
                 android:textAllCaps="false"
                 android:textColor="@android:color/background_light"
                 android:textSize="24sp" />
@@ -93,7 +93,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="23dp"
-                android:text="@string/create_new_account"
+                android:text="Create a new account"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="17sp"
@@ -124,7 +124,7 @@
                 android:background="@drawable/buttons"
                 android:drawableStart="@drawable/phone"
                 android:padding="4dp"
-                android:text="@string/phone_number"
+                android:text="Phone Number"
                 android:textAllCaps="false"
                 android:textColor="@android:color/background_light"
                 android:textSize="20sp" />

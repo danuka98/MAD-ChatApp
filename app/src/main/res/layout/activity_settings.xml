@@ -4,13 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+    tools:context=".SettingsActivity"
+    android:background="@drawable/background_1">
+
+    <include
+        layout="@layout/actionbar_layout"
+        android:id="@+id/setting_actionbar">
+
+    </include>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
-        android:layout_marginTop="40dp"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_marginTop="90dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:src="@drawable/profile_image"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -30,7 +37,6 @@
         android:hint="Username"
         android:inputType="textMultiLine"
         android:padding="4dp"
-        android:text="@string/username"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold" />
@@ -48,7 +54,6 @@
         android:hint="Hey, I am using ChatApp"
         android:inputType="textMultiLine"
         android:padding="4dp"
-        android:text="@string/using_whatsApp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold" />
@@ -64,7 +69,7 @@
         android:background="@drawable/buttons"
         android:inputType="textMultiLine"
         android:padding="4dp"
-        android:text="@string/update_btn"
+        android:text="Update my profile"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"

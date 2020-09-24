@@ -13,9 +13,4 @@
     <string name="verification_code...">Verification code...</string>
     <string name="type_a_message">Type a message</string>
 
-
-    <string name="username">Username..</string>
-    <string name="using_whatsApp">Hey, I am using ChatApp</string>
-    <string name="update_btn">Update My Profile</string>
-
 </resources>

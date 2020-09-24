@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GroupChatActivity">
+    tools:context=".GroupChatActivity"
+    android:background="@drawable/chat_background">
 
     <include
         android:id="@+id/group_chat_bar"
@@ -39,28 +40,33 @@
 
     </ScrollView>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/linearLayout"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:background="@android:color/background_light">
 
         <EditText
             android:id="@+id/groupMessage"
             android:layout_width="325dp"
             android:layout_height="wrap_content"
-            android:hint="Type a message"
-            android:padding="17dp"
-            android:text="@string/type_a_message" />
+            android:hint="Type a message.."
+            android:padding="15dp"
+            android:layout_marginStart="10dp"
+            android:maxLines="5"/>
 
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/send_message"
-            android:id="@+id/groupMessageBtn"/>
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/send_button_1"
+            android:id="@+id/groupMessageBtn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

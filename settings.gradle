@@ -1,2 +1,4 @@
+include ':sinch-android-rtc-3.12.9'
+include ':sinch-android-rtc-3.17.4'
 include ':app'
 rootProject.name = "ChatApp"

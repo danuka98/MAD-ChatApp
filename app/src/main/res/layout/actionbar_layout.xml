@@ -7,4 +7,6 @@
     android:background="#EB32076E"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
+
+
 </androidx.appcompat.widget.Toolbar>
