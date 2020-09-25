@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CallActivity"
+    android:background="@drawable/back">
+
+    <ImageView
+        android:id="@+id/call_user_profile"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:src="@drawable/ic_baseline_person_24"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cancel_call_button"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/call_user_profile"
+        android:src="@drawable/cancel_call"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
+</RelativeLayout>
