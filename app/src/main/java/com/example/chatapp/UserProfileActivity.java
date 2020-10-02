@@ -74,7 +74,7 @@ public class UserProfileActivity extends AppCompatActivity {
                     String userName = snapshot.child("name").getValue().toString();
                     String userDescription = snapshot.child("description").getValue().toString();
 
-                    Picasso.get().load(userImage).placeholder(R.drawable.profile_image).into(userProfileImage);//load profile photo
+                    Picasso.get().load(userImage).into(userProfileImage);//load profile photo
                     userProfileName.setText(userName);
                     userProfileDescription.setText(userDescription);
 

@@ -7,6 +7,17 @@
     android:background="@drawable/background_2"
     tools:context=".UserProfileActivity">
 
+    <ImageView
+        android:id="@+id/profileBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/friend_profile_image"
+        android:layout_marginStart="-130dp"
+        android:layout_marginTop="-130dp"
+        android:layout_marginEnd="-130dp"
+        android:layout_marginBottom="98dp"
+        android:src="@drawable/profilebackground1" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/friend_profile_image"
         android:layout_width="180dp"

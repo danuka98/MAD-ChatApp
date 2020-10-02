@@ -339,6 +339,7 @@ public class ChatActivity extends AppCompatActivity {
         }
     }
 
+    //displaying user in online or offline
     private void displayLastSeen(){
         rootReference.child("Users").child(receiverID).addValueEventListener(new ValueEventListener() {
             @Override

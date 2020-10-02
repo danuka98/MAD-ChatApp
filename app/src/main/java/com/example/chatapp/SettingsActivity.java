@@ -7,9 +7,12 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +34,7 @@ import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -50,6 +54,7 @@ public class SettingsActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
     private Toolbar settingActionBar;
+    private Uri imageUri;
 
 
     @Override
@@ -63,8 +68,6 @@ public class SettingsActivity extends AppCompatActivity {
         profileImageReference = FirebaseStorage.getInstance().getReference().child("Profile Images");
 
         InitializeFields();//calling InitializeFields method
-
-        userName.setVisibility(View.INVISIBLE);//current username invisible
 
         updateProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,7 +85,7 @@ public class SettingsActivity extends AppCompatActivity {
                 Intent galleryIntent = new Intent();
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
                 galleryIntent.setType("image/*");
-                startActivityForResult(galleryIntent, Gallery);
+                startActivityForResult(Intent.createChooser(galleryIntent, "Select Picture"),Gallery);
 
             }
         });
@@ -95,13 +98,13 @@ public class SettingsActivity extends AppCompatActivity {
 
         if (requestCode == Gallery && resultCode == RESULT_OK && data!= null){
 
-            Uri imageUri = data.getData();
+            imageUri = data.getData();
 
             // start picker to get image for cropping and then use the image in cropping activity
             CropImage.activity()
                     .setGuidelines(CropImageView.Guidelines.ON)
                     .setAspectRatio(1,1)
-                    .start(this);
+                    .start(SettingsActivity.this);
         }
         //crop image
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
@@ -133,13 +136,12 @@ public class SettingsActivity extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
                                                 Toast.makeText(SettingsActivity.this, "Image Saved", Toast.LENGTH_SHORT).show();
-                                                progressDialog.dismiss();
                                             }
                                             else {
                                                 String message = task.getException().toString();
                                                 Toast.makeText(SettingsActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
-                                                progressDialog.dismiss();
                                             }
+                                            progressDialog.dismiss();
                                         }
                                     });
                         }
@@ -228,6 +230,7 @@ public class SettingsActivity extends AppCompatActivity {
                             userName.setText(retrieveUserName);
                             description.setText(retrieveDescription);
                             Picasso.get().load(retrieveProfileImage).into(profileImage);
+
                         }
                         else if ((snapshot.exists()) && (snapshot.hasChild("name"))){
                             String retrieveUserName = snapshot.child("name").getValue().toString();
@@ -238,7 +241,6 @@ public class SettingsActivity extends AppCompatActivity {
 
                         }
                         else{
-                            userName.setVisibility(View.VISIBLE);//visible username
                             Toast.makeText(SettingsActivity.this, "Please, Update your information...", Toast.LENGTH_SHORT).show();
                         }
                     }
