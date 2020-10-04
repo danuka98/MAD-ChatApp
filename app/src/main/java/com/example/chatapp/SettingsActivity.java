@@ -37,7 +37,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private Button updateProfileBtn;
+    private Button updateProfileBtn,deleteAccountBtn;
     private EditText userName, description;
     private CircleImageView profileImage;
 
@@ -84,6 +84,14 @@ public class SettingsActivity extends AppCompatActivity {
                 galleryIntent.setType("image/*");
                 startActivityForResult(galleryIntent, Gallery);
 
+            }
+        });
+
+        deleteAccountBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent deleteIntent = new Intent(SettingsActivity.this,DeleteAccount.class);
+                startActivity(deleteIntent);
             }
         });
     }
@@ -161,6 +169,8 @@ public class SettingsActivity extends AppCompatActivity {
         description = (EditText) findViewById(R.id.set_profile_description);
         profileImage = (CircleImageView) findViewById(R.id.profile_image);
         progressDialog = new ProgressDialog(this);
+        deleteAccountBtn = (Button) findViewById(R.id.deleteAcc_btn);
+
 
         settingActionBar = (Toolbar) findViewById(R.id.setting_actionbar);
         setSupportActionBar(settingActionBar);
@@ -205,7 +215,6 @@ public class SettingsActivity extends AppCompatActivity {
                     });
         }
     }
-
     //Moving to the Main page
     private void SendUserToMainActivity() {
         Intent mainIntent = new Intent(SettingsActivity.this,MainActivity.class);

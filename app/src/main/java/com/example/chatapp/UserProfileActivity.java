@@ -30,7 +30,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private CircleImageView userProfileImage;
     private TextView userProfileName,userProfileDescription;
     private Button sendMessageButton, cancelMessageButton;
-
+    private Button DeleteAccountButton;
     private DatabaseReference userReference,chatRequestReference, contactReference,notificationReference;
     private FirebaseAuth mAuth;
 
