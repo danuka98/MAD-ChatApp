@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         UserEmail = (EditText) findViewById(R.id.login_email);
         UserPassword = (EditText) findViewById(R.id.login_password);
         CreateNewAccount = (TextView) findViewById(R.id.create_new_account);
-        ForgetPassword = (TextView) findViewById(R.id.forget_password_link);
+//        ForgetPassword = (TextView) findViewById(R.id.forget_password_link);
 
         loadingBar = new ProgressDialog(this);
     }
@@ -141,7 +141,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             else {
                                 String message = task.getException().toString();
-                                Toast.makeText(LoginActivity.this, "Error: "+ message, Toast.LENGTH_SHORT).show();//Alerts
+                                Toast.makeText(LoginActivity.this, "Error: Invalid User Name or Password", Toast.LENGTH_SHORT).show();//Alerts
                                 loadingBar.dismiss();
                             }
                         }
