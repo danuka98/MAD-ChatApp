@@ -146,18 +146,18 @@ public class ContactsFragment extends Fragment {
 
     public static class contactListHolder extends RecyclerView.ViewHolder{
 
-        TextView username, userDescription;
-        CircleImageView profileImage;
-        ImageView onlineIcon;
+            TextView username, userDescription;
+            CircleImageView profileImage;
+            ImageView onlineIcon;
 
-        public contactListHolder(@NonNull View itemView) {
-            super(itemView);
+            public contactListHolder(@NonNull View itemView) {
+                super(itemView);
 
-            //initializing fields
-            username = itemView.findViewById(R.id.userName);
-            userDescription = itemView.findViewById(R.id.userDescription);
-            profileImage = itemView.findViewById(R.id.user_profile_image);
-            onlineIcon = (ImageView) itemView.findViewById(R.id.online);
-        }
+                //initializing fields
+                username = itemView.findViewById(R.id.userName);
+                userDescription = itemView.findViewById(R.id.userDescription);
+                profileImage = itemView.findViewById(R.id.user_profile_image);
+                onlineIcon = (ImageView) itemView.findViewById(R.id.online);
+            }
     }
 }

@@ -153,7 +153,7 @@ public class ChatFragment extends Fragment {
 
         }
     }
-//
+
 //    private class SinchCallClientListener implements CallClientListener {
 //
 //        @Override
